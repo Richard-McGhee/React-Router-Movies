@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
+import { Link, BrowserRouter, Route } from 'react-router-dom';
 
 const SavedList = props => (
   <div className="saved-list">
@@ -11,7 +11,7 @@ const SavedList = props => (
       <Link to='/'>
         <div className="home-button">Home</div>
       </Link>
-      <Route exact path='/' component={App}/>
+      <Route exact path='/' />
     </BrowserRouter>
   </div>
 );
