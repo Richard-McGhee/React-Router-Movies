@@ -5,7 +5,7 @@ import { BrowserRouter, Link, Route } from 'react-router-dom';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
 
-const nothing = []
+// const nothing = []
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -34,7 +34,8 @@ const App = () => {
       <SavedList list={savedList} />
       <BrowserRouter>
         <Link to='/movielist'>Movie List</Link>
-        <Link to='/movie'>Movie</Link>
+        <Link to='/movies/1'>Movie 1</Link>
+        <Link to='/movies/2'>Movie 2</Link>
 
         <Route path='/movielist' component={MovieList} />
         <Route to='movies/:id' component={Movie}/>
