@@ -7,12 +7,9 @@ const SavedList = props => (
     {props.list.map(movie => (
       <span className="saved-movie">{movie.title}</span>
     ))}
-    <BrowserRouter>
-      <Link to='/'>
+    <Link to='/'>
         <div className="home-button">Home</div>
       </Link>
-      <Route exact path='/' />
-    </BrowserRouter>
   </div>
 );
 

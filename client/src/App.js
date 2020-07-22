@@ -31,14 +31,16 @@ const App = () => {
 
   return (
     <div>
-      <SavedList list={savedList} />
       <BrowserRouter>
+        <SavedList list={savedList}/>
         <Link to='/movielist'>Movie List</Link>
-        <Link to='/movies/1'>Movie 1</Link>
-        <Link to='/movies/2'>Movie 2</Link>
+        {movieList.map(movie => (
+          <Link key={movie.id} to={`/movies/${movie.id}`} >{movie.title}</Link>
+        ))}
 
-        <Route path='/movielist' component={MovieList} />
-        <Route to='movies/:id' component={Movie}/>
+        <Route exact path="/" render={props => <h1>HOME</h1>} />
+        <Route exact path='/movielist' render={props => <MovieList {...props} movies={movieList} />} />
+        <Route path='/movies/:id' component={Movie}/>
       </BrowserRouter>
     </div>
   );
